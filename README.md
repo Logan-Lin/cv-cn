@@ -9,11 +9,11 @@
 - `cover-letter.tex` 是通用求职信，其中的 `[职位]` 和 `[单位]` 等占位符应根据具体申请替换
 - `comp/` 包含由各外层文档引入的复用组件
     - `comp/body.tex` 是完整简历和精简简历共用的简历主体，包含页首、简介、教育经历、工作经历和科研经历。它在科研经历中调用 `\listsnote` 和 `\researchplannote`，由外层文档分别链接到后续章节或独立文档
-    - `comp/teaching-experience.tex` 是课程教学和学生指导部分，标签为 `sec:teaching-experience`。完整简历、精简简历和教学档案分别引入该组件，并通过 `\teachingportfolionote` 链接到教学思考或独立教学档案
+    - `comp/teaching-experience.tex` 是教学经历，包含课程教学和学生指导两个部分，标签为 `sec:teaching-experience`。完整简历、精简简历和教学档案分别引入该组件，并通过 `\teachingportfolionote` 链接到教学思考或独立教学档案
     - `comp/pub.tex` 是完整论文列表，包含主要论文和其他论文两个部分，标签为 `sec:pub`
     - `comp/projects.tex` 是完整项目列表，包含项目负责人和参与项目两个部分，标签为 `sec:projects`
     - `comp/presentations.tex` 是完整学术报告列表，标签为 `sec:presentations`
     - `comp/service.tex` 是学术服务部分，标签为 `sec:service`，由完整简历和完整列表文档引入
     - `comp/research-plan.tex` 是研究计划，标签为 `sec:research-plan`，由完整简历和独立研究计划文档引入
     - `comp/teaching-reflections.tex` 是教学思考，包含教学理念、课程建设、指导方法和教学计划，标签为 `sec:teaching-reflections`，由完整简历和教学档案引入
-- `Makefile` 使用 XeLaTeX 编译六份文档，并提供 `all` 和 `clean` 目标
+- `Makefile` 使用 XeLaTeX 编译六份文档，为每份文档提供一个目标，另有 `all` 和 `clean` 目标
