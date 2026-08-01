@@ -1,0 +1,92 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cv}[2026/08/01 Yan Lin Chinese CV style]
+
+\RequirePackage{iftex}
+\ifXeTeX\else
+    \PackageError{cv}{XeLaTeX is required}{Run latexmk with the -xelatex option.}
+\fi
+\RequirePackage[UTF8,scheme=plain,heading=false,fontset=fandol]{ctex}
+\RequirePackage{fontspec}
+\RequirePackage{microtype}
+\emergencystretch=2em
+\setlength{\parindent}{0pt}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+\RequirePackage{sourcesanspro}
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\CJKfamilydefault}{\CJKsfdefault}
+
+\RequirePackage[a4paper,
+    top=1.8cm, bottom=2.0cm, left=2.0cm, right=2.0cm,
+    headheight=14pt, footskip=1.0cm]{geometry}
+
+\RequirePackage[dvipsnames]{xcolor}
+\definecolor{accent}{HTML}{0D3363}
+\definecolor{link}{HTML}{3568A8}
+\definecolor{rule}{HTML}{B0B0B0}
+\definecolor{muted}{HTML}{606060}
+
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=link,
+    linkcolor=link,
+    citecolor=link,
+    pdfauthor={林彦}
+}
+
+\RequirePackage{titlesec}
+\titleformat{\section}
+    {\cvlarge\bfseries\color{accent}}{}{0pt}{}%
+    [\vspace{2pt}{\color{rule}\titlerule[0.4pt]}]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titleformat{\subsection}
+    {\cvmedium\bfseries\color{accent!85!black}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt}{2pt}
+
+\RequirePackage{enumitem}
+\setlist{nosep, leftmargin=1.25em, labelsep=0.6em}
+\setlist[itemize]{label=\textbullet}
+
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{needspace}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{{\cvnormal\color{muted}林彦 / 中文简历（更新于 \today）}}
+\fancyfoot[R]{{\cvnormal\color{muted}\thepage\,/\,\NoHyper\pageref{LastPage}\endNoHyper}}
+
+\newcommand{\cvhuge}{\fontsize{20pt}{24pt}\selectfont}
+\newcommand{\cvlarge}{\fontsize{14pt}{17pt}\selectfont}
+\newcommand{\cvmedium}{\fontsize{12pt}{14pt}\selectfont}
+\newcommand{\cvnormal}{\fontsize{10pt}{12pt}\selectfont}
+\newcommand{\cvsmall}{\fontsize{8pt}{10pt}\selectfont}
+\let\normalsize\cvnormal
+
+\newlength{\entryskip}
+\setlength{\entryskip}{6pt}
+
+\newcommand{\me}{\textbf{Yan Lin}}
+
+\newcommand{\cvname}[1]{{\cvhuge\bfseries\color{accent}#1}\par\vspace{2pt}}
+\newcommand{\cvtagline}[1]{{\cvmedium\color{muted}#1}\par\vspace{6pt}}
+
+\newcommand{\pubentry}[5]{%
+    \par\vspace{\entryskip}
+    \needspace{4\baselineskip}%
+    {\cvsmall\makebox[\linewidth][l]{#1\hfill #2}\par\nobreak}%
+    #3\par
+    \ifx&#4&\else\nobreak{\cvsmall\color{muted}#4\par}\fi
+    \ifx&#5&\else\nobreak{\cvsmall\color{muted}#5\par}\fi}
+
+\newcommand{\roleentry}[4]{%
+    \par
+    \needspace{3\baselineskip}%
+    \makebox[\linewidth][l]{\textbf{#1}\hfill{\cvsmall #3}}\par\nobreak
+    #2\par\nobreak
+    \ifx&#4&\else{\cvsmall\color{muted}#4}\par\fi
+    \vspace{\entryskip}}
+
+\newcommand{\award}[2]{\item \textbf{#1} \hfill {\color{muted}\cvsmall #2}}
