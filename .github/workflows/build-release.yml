@@ -1,0 +1,29 @@
+name: Build and Release LaTeX Documents
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/xu-cheng/texlive-alpine:latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build all documents
+        run: |
+          mkdir -p out
+          make main-full main-short
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          files: |
+            out/main-full.pdf
+            out/main-short.pdf
+          body: "Compiled LaTeX documents"
