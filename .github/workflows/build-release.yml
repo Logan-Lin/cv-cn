@@ -18,12 +18,11 @@ jobs:
       - name: Build all documents
         run: |
           mkdir -p out
-          make main-full main-short
+          make main
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
         with:
           files: |
-            out/main-full.pdf
-            out/main-short.pdf
+            out/main.pdf
           body: "Compiled LaTeX documents"

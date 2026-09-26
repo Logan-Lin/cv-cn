@@ -1,16 +1,18 @@
 \documentclass[a4paper]{article}
 
 \usepackage{cv}
-\hypersetup{pdftitle={林彦 - 精简中文简历}}
 
+\ifdefined\extendedcv
+\hypersetup{pdftitle={林彦 - 中文简历（扩展版）}}
+\newcommand{\listsnote}{%
+完整列表见下文的\hyperref[sec:publications]{论文发表}、\hyperref[sec:projects]{项目经历}和\hyperref[sec:presentations]{学术报告}部分。}
+\else
+\hypersetup{pdftitle={林彦 - 中文简历}}
 \newcommand{\listsnote}{%
 星号（*）表示同等贡献。
 完整列表收录于另附的独立文档，也可在我个人主页的\href{https://www.yanlincs.com/publications/}{论文发表}、\href{https://www.yanlincs.com/projects/}{项目经历}和\href{https://www.yanlincs.com/activities/}{学术活动}页面查看。
 }
-\newcommand{\researchplannote}{%
-}
-\newcommand{\teachingportfolionote}{%
-}
+\fi
 
 \begin{document}
 \input{comp/body.tex}
@@ -22,6 +24,14 @@
 \input{comp/teaching-experience.tex}
 
 \input{comp/teaching-reflections.tex}
+
+\ifdefined\extendedcv
+\input{comp/publications.tex}
+
+\input{comp/projects.tex}
+
+\input{comp/presentations.tex}
+\fi
 
 \input{comp/service.tex}
 
