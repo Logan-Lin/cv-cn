@@ -1,15 +1,10 @@
 \documentclass[a4paper]{article}
 
 \usepackage{cv}
-\hypersetup{pdftitle={林彦 - 求职信}}
+\cvdocument{求职信}
 
 \begin{document}
-\cvname{林彦}
-\cvtagline{助理教授 / 计算机科学系 / 奥尔堡大学}
-
-电子邮箱：\href{mailto:lyan@cs.aau.dk}{lyan@cs.aau.dk} \,/\,
-个人主页：\href{https://www.yanlincs.com}{yanlincs.com} \,/\,
-电话：+45 9186-1833
+\input{comp/header.tex}
 
 {\color{rule}\rule{\linewidth}{0.4pt}}
 
@@ -22,7 +17,7 @@
 \vspace{\entryskip}
 您好！
 我谨申请[单位][院系]的[职位]。
-我叫林彦，现任奥尔堡大学计算机科学系助理教授，2024 年 3 月于北京交通大学获得计算机科学博士学位。
+我叫\mynamecn{}，现任奥尔堡大学计算机科学系助理教授，2024 年 3 月于北京交通大学获得计算机科学博士学位。
 2022 年 9 月，我以访问博士生身份首次加入奥尔堡大学，2024 年 6 月回到奥尔堡大学担任博士后研究员，2026 年 6 月起担任现职。
 我期待有机会在这一职位上继续从事学术工作。
 
@@ -61,6 +56,6 @@
 敬礼！
 
 \vspace{\entryskip}
-林彦
+\mynamecn
 
 \end{document}

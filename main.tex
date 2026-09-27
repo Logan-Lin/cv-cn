@@ -3,17 +3,19 @@
 \usepackage{cv}
 
 \ifdefined\extendedcv
-\hypersetup{pdftitle={林彦 - 中文简历（扩展版）}}
+\cvdocument{扩展版简历}
 \newcommand{\listsnote}{%
 完整列表见下文的\hyperref[sec:publications]{论文发表}、\hyperref[sec:projects]{项目经历}和\hyperref[sec:presentations]{学术报告}部分。}
 \else
-\hypersetup{pdftitle={林彦 - 中文简历}}
+\cvdocument{简历}
 \newcommand{\listsnote}{%
 完整列表收录于另附的独立文档，也可在我个人主页的\href{https://www.yanlincs.com/publications/}{论文发表}、\href{https://www.yanlincs.com/projects/}{项目经历}和\href{https://www.yanlincs.com/activities/}{学术活动}页面查看。
 }
 \fi
 
 \begin{document}
+\input{comp/header.tex}
+
 \input{comp/body.tex}
 
 \input{comp/research-experience.tex}
