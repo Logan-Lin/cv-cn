@@ -1,6 +1,6 @@
 LATEXMK = latexmk -xelatex -bibtex -shell-escape -interaction=nonstopmode -output-directory="./out" -f
 
-all: main list teaching-portfolio cover-letter
+all: main list cover-letter
 
 ifdef EXTENDED
 MAIN_FLAGS = -jobname=main-extended -usepretex='\def\extendedcv{}'
@@ -11,9 +11,6 @@ main: main.tex
 
 list: list.tex
 	$(LATEXMK) list.tex
-
-teaching-portfolio: teaching-portfolio.tex
-	$(LATEXMK) teaching-portfolio.tex
 
 cover-letter: cover-letter.tex
 	$(LATEXMK) cover-letter.tex
