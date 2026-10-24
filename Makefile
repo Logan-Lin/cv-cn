@@ -3,11 +3,13 @@ LATEXMK = latexmk -xelatex -bibtex -shell-escape -interaction=nonstopmode -outpu
 all: main list cover-letter
 
 ifdef EXTENDED
-MAIN_FLAGS = -jobname=main-extended -usepretex='\def\extendedcv{}'
+MAIN_FLAGS = -usepretex='\def\extendedcv{}'
+else ifdef MINIMAL
+MAIN_FLAGS = -usepretex='\def\minimalcv{}'
 endif
 
 main: main.tex
-	$(LATEXMK) $(MAIN_FLAGS) main.tex
+	$(LATEXMK) -g $(MAIN_FLAGS) main.tex
 
 list: list.tex
 	$(LATEXMK) list.tex
