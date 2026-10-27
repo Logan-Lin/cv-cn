@@ -43,7 +43,7 @@
 \pubentry{NeurIPS, 2025, CCF A 类会议}{\href{https://neurips.cc/virtual/2025/oral/117509}{口头报告} \,/\, \href{https://neurips.cc/virtual/2025/poster/117508}{海报} \,/\, \href{https://arxiv.org/abs/2505.12672}{预印本}}
 {TransferTraj: A Vehicle Trajectory Learning Model for Region and Task Transferability}
 {Tonglong Wei*, \me*, Zeyu Zhou, Haomin Wen, Jilin Hu, Shengnan Guo, Youfang Lin, Gao Cong, Huaiyu Wan}
-{从车辆 GPS 轨迹中学习可在不同区域和不同预测任务之间迁移的知识，无须重新训练或维护多个专用模型。该方法将各项任务统一转化为恢复轨迹缺失部分的问题，使单一模型在数据有限时也能处理多种任务。}
+{在一个区域预训练车辆 GPS 轨迹模型，并将其迁移到其他区域和不同任务，无须重新训练或维护多个专用模型。该方法将各项任务统一转化为恢复轨迹缺失部分的问题，使单一模型在数据有限时也能处理多种任务。}
 
 \pubentry{NeurIPS, 2025, CCF A 类会议}{\href{https://neurips.cc/virtual/2025/poster/117945}{海报} \,/\, \href{https://arxiv.org/abs/2410.14281}{预印本}}
 {PLMTrajRec: A Scalable and Generalizable Trajectory Recovery Method with Pre-trained Language Models}
@@ -53,7 +53,7 @@
 \pubentry{IEEE TKDE, 2025, 影响因子 11.6}{\href{https://ieeexplore.ieee.org/document/11004614}{论文} \,/\, \href{https://arxiv.org/abs/2402.07232}{预印本} \,/\, \href{https://github.com/Logan-Lin/UVTM}{代码}}
 {UVTM: Universal Vehicle Trajectory Modeling with ST Feature Domain Generation}
 {\me, Jilin Hu, Shengnan Guo, Bin Yang, Christian S. Jensen, Youfang Lin, Huaiyu Wan}
-{用单一模型处理出行时间估计、轨迹恢复和轨迹预测等多种车辆 GPS 轨迹任务，无须为每项任务维护独立模型。该方法通过将不完整轨迹重建为稠密且完整的轨迹，在轨迹稀疏或仅有部分特征时仍能保持较高精度。}
+{面向车辆 GPS 轨迹的基座模型，只需预训练一次即可适配出行时间估计、轨迹恢复和轨迹预测等多种任务，无须为每项任务维护独立模型。该方法通过将不完整轨迹重建为稠密且完整的轨迹，在轨迹稀疏或仅有部分特征时仍能保持较高精度。}
 
 \pubentry{IJCAI, 2025, CCF A 类会议}{\href{https://www.ijcai.org/proceedings/2025/411}{论文} \,/\, \href{https://arxiv.org/abs/2405.12459}{预印本} \,/\, \href{https://github.com/Zeru19/PLM4Traj}{代码}}
 {TrajCogn: Leveraging LLMs for Cognizing Movement Patterns and Travel Purposes from Trajectories}
@@ -63,7 +63,7 @@
 \pubentry{IEEE TKDE, 2025, 影响因子 11.6}{\href{https://ieeexplore.ieee.org/document/10818577}{论文} \,/\, \href{https://arxiv.org/abs/2407.12550}{预印本} \,/\, \href{https://github.com/Logan-Lin/UniTE}{代码}}
 {UniTE: A Survey and Unified Pipeline for Pre-training Spatiotemporal Trajectory Embeddings}
 {\me, Zeyu Zhou, Yicheng Liu, Haochen Lv, Haomin Wen, Tianyi Li, Yushuai Li, Christian S. Jensen, Shengnan Guo, Youfang Lin, Huaiyu Wan}
-{综述可复用移动轨迹表示的学习方法，并用共享代码将这些方法整合为统一的模块化框架，使新方法可以在同一基础上构建、比较和评估。}
+{综述可适用于不同任务的车辆与人类轨迹通用表示预训练方法，并用共享代码将这些方法整合为统一的模块化框架，使新方法可以在同一基础上构建、比较和评估。}
 
 \pubentry{WWW, 2025, CCF A 类会议}{\href{https://openreview.net/forum?id=KmMSQS6tFn}{论文} \,/\, \href{https://github.com/decisionintelligence/Path-LLM}{代码}}
 {Path-LLM: A Multi-Modal Path Representation Learning by Aligning and Fusing with Large Language Models}
@@ -88,7 +88,7 @@
 \pubentry{IEEE TKDE, 2023, 影响因子 8.9}{\href{https://ieeexplore.ieee.org/abstract/document/10375102}{论文} \,/\, \href{https://arxiv.org/abs/2207.14539}{预印本} \,/\, \href{https://github.com/Logan-Lin/MMTEC}{代码}}
 {Pre-training General Trajectory Embeddings with Maximum Multi-view Entropy Coding}
 {\me, Huaiyu Wan, Shengnan Guo, Jilin Hu, Christian S. Jensen, Youfang Lin}
-{从无标注数据中学习通用移动轨迹表示，同时捕捉出行行为以及空间和时间模式。所得表示避免针对特定任务的偏差，因而能够迁移到多种下游任务。}
+{从无标注数据中预训练通用移动轨迹表示，同时捕捉出行行为以及空间和时间模式。所得表示避免针对特定任务的偏差，因而可在多种下游任务中复用，无须为每项任务重新学习。}
 
 \pubentry{IEEE TKDE, 2022, 影响因子 8.9}{\href{https://ieeexplore.ieee.org/abstract/document/9351627}{论文} \,/\, \href{https://github.com/Logan-Lin/TALE}{代码}}
 {Pre-training Time-Aware Location Embeddings from Spatial-Temporal Trajectories}
@@ -98,7 +98,7 @@
 \pubentry{AAAI, 2021, CCF A 类会议}{\href{https://ojs.aaai.org/index.php/AAAI/article/view/16548}{论文} \,/\, \href{https://github.com/Logan-Lin/CTLE}{代码}}
 {Pre-training Context and Time Aware Location Embeddings from Spatial-Temporal Trajectories for User Next Location Prediction}
 {\me, Huaiyu Wan, Shengnan Guo, Youfang Lin}
-{从移动轨迹中预训练地点表示，捕捉地点含义随周边环境和访问时间产生的变化，从而更准确地预测用户的下一个地点。}
+{从人类移动轨迹中预训练地点表示，捕捉地点含义随周边环境和访问时间产生的变化。这些表示可在不同预测模型之间共享，使其更准确地预测用户的下一个地点。}
 
 \subsection*{其他论文（参与作者）}
 以下论文由我担任参与作者，主要通过技术讨论、算法改进、实验或写作作出贡献。
